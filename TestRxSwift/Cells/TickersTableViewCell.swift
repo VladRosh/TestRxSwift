@@ -27,7 +27,7 @@ class TickersTableViewCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
 
         let x = 10
-        let width = Int(self.contentView.frame.width)
+        let width = Int(self.contentView.frame.width - 30)
         let height = 25
 
         tickerNameLabel = UILabel(frame: CGRect(x: x, y: 10, width: width, height: height))

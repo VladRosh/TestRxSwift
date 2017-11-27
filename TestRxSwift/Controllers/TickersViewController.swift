@@ -76,7 +76,6 @@ class TickersViewController: UIViewController {
     }
     
     func reloadTableView(tableView: UITableView) {
-        
         UIView.transition(with: tableView,
                           duration: 0.20,
                           options: .transitionCrossDissolve,
@@ -98,7 +97,7 @@ extension TickersViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = TickersTableViewCell(style: .default, reuseIdentifier: "Cell")
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! TickersTableViewCell
         cell.configureCellWithModel(tickerModel: tickers[indexPath.row])
         
         return cell
